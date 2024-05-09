@@ -19,8 +19,9 @@ public class CommandLine {
     private Integer idCommand;
     private Integer quantity;
 
-    @OneToMany(mappedBy = "commandLine_id", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Command> commands = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "command_id")
+    private Command command;
 
     @ManyToOne
     @JoinColumn(name = "article_id")

@@ -16,7 +16,7 @@ public class Tp2SpringApplication {
 	CommandLineRunner commandLineRunner(UtilisateurRepository utilisateurRepository){
 		return args -> {
 			utilisateurRepository.save(new Utilisateur(null,"ayoub", "123", 3, null, null));
-		}
+		};
 	}
 }
 

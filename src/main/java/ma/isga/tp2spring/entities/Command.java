@@ -24,9 +24,8 @@ public class Command {
     @OneToMany(mappedBy = "command", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Utilisateur> utilisateurs = new ArrayList<>();
 
-    @ManyToOne
-    @JoinColumn(name = "commandLine_id")
-    private CommandLine commandLine;
+    @OneToMany(mappedBy = "command", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CommandLine> commandLines = new ArrayList<>();
 
     @OneToOne(mappedBy = "command", cascade = CascadeType.ALL, orphanRemoval = true)
     private Payment payment;
